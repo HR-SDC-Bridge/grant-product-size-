@@ -8,7 +8,7 @@ const productSizes = models.productSizes;
 const singleSize = models.singleSize;
 
 console.log(`Connecting to DB mongodb://${host}/${dbname}`)
-mongoose.connect(`mongodb://${host}/${dbname}`, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb://${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 mongoose.connection.on('error', console.error.bind(console, 'connection error: '));
 mongoose.connection.once('open', () => console.log('Connection successful!'));
@@ -35,8 +35,9 @@ const db = {
 
   //UPDATE
 
-  updateProductSize: (document, callback) => {
-    productSizes.updateOne(document, (err, doc) => {
+  updateProductSize: (id, document, callback) => {
+    const filter = {id: id};
+    productSizes.findOneAndUpdate(filter, document, {new: true}, (err, doc) => {
       if (err) { return callback(err); }
       return callback(null, doc);
     });

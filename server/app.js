@@ -13,6 +13,7 @@ app.use(express.static(path.resolve('public')));
 app.get('/:id', (req, res) => {
   res.sendFile(path.resolve('public/index.html'));
 });
+
 //Create
 
 app.post('/api/sizes/', bodyParser, (req, res) => {
@@ -35,8 +36,12 @@ app.get('/api/sizes/:id', (req, res) => {
 
 //Update
 
-app.put('/api/sizes/:id', (req, res) => {
-  console.log(req.params.id);
+app.put('/api/sizes/:id', bodyParser, (req, res) => {
+  db.updateProductSizeAsync(req.params.id, req.body)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => console.error(err));
 });
 
 //Delete
