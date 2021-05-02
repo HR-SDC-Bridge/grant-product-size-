@@ -124,7 +124,9 @@ $.get('api/sizes/1', (data) => { ... });
   ]
 }
 ```
-**Functionality** | Retrieves product's sizes.
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Create product size.
 **Endpoint/Path** | `api/sizes/`
 **Verb**          | POST
 
@@ -157,7 +159,9 @@ $.post('api/sizes/', (data) => { ... });
   ]
 }
 ```
-**Functionality** | Retrieves product's sizes.
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Update product sizes.
 **Endpoint/Path** | `api/sizes/:id`
 **Verb**          | PUT
 
@@ -190,7 +194,9 @@ $.put('api/sizes/1', (data) => { ... });
   ]
 }
 ```
-**Functionality** | Retrieves product's sizes.
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Delete product sizes.
 **Endpoint/Path** | `api/sizes/:id`
 **Verb**          | DELETE
 
