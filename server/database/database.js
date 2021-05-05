@@ -37,7 +37,9 @@ const db = {
 
   updateProductSize: (id, document, callback) => {
     const filter = {id: id};
+    // const body = {$set: document};
     productSizes.findOneAndUpdate(filter, document, {new: true}, (err, doc) => {
+      console.log(id);
       if (err) { return callback(err); }
       return callback(null, doc);
     });
