@@ -47,7 +47,12 @@ app.put('/api/sizes/:id', bodyParser, (req, res) => {
 //Delete
 
 app.delete('/api/sizes/:id', (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
+  db.deleteProductSizeAsync(req.params.id)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => console.error(err));
 });
 
 module.exports = app;
