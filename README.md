@@ -124,6 +124,87 @@ $.get('api/sizes/1', (data) => { ... });
   ]
 }
 ```
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Create product size.
+**Endpoint/Path** | `api/sizes/`
+**Verb**          | POST
+
+### Request/Response
+
+```javascript
+/* Sample Request */
+$.post('api/sizes/', (data) => { ... });
+
+/* Sample Request */
+{
+  id: 1,
+  title: '33x20"'
+  sizes: [
+    {
+      name: 'Height',
+      size: '33',
+      unit: 'in'
+    },
+    {
+      name: 'Width',
+      size: '20',
+      unit: 'in'
+    },
+    {
+      name: 'Max. load',
+      size: '100',
+      unit: 'lb'
+    }
+  ]
+}
+```
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Update product sizes.
+**Endpoint/Path** | `api/sizes/:id`
+**Verb**          | PUT
+
+### Request/Response
+
+```javascript
+/* Sample Request */
+$.put('api/sizes/1', (data) => { ... });
+
+/* Sample Response */
+{
+  id: 1,
+  title: '45x25"'
+  sizes: [
+    {
+      name: 'Height',
+      size: '45',
+      unit: 'in'
+    },
+    {
+      name: 'Width',
+      size: '25',
+      unit: 'in'
+    },
+    {
+      name: 'Max. load',
+      size: '200',
+      unit: 'lb'
+    }
+  ]
+}
+```
+API               | Description
+------------------|----------------------------------------------
+**Functionality** | Delete product sizes.
+**Endpoint/Path** | `api/sizes/:id`
+**Verb**          | DELETE
+
+### Request/Response
+
+```javascript
+/* Sample Request */
+$.delete('api/sizes/1', (data) => { ... });
 
 ## Database
 
