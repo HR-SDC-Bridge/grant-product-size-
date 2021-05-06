@@ -19,14 +19,14 @@ const generateSeedData = () => {
     ]
   ];
 
-  for (let id = 1; id <= 100; id++) {
+  for (let id = 1; id <= 100000; id++) {
     let document = {};
     const hasBonus = random(0, 2);
     const sizeType = random(-1, 2);
     const sizingGroup = sizeSets[sizeType];
     const numSizes = sizeType < 0 ? 0 : sizingGroup.length;
 
-    for (let j = 0; j < numSizes ; j++) {
+    for (let j = 0; j < numSizes; j++) {
       let temp = {
         name: sizingGroup[j][0],
         unit: sizingGroup[j][1],
@@ -57,9 +57,9 @@ const generateSeedData = () => {
       let width = document.sizes[1].size;
       document.title = `${length}x${width}"`;
     } else if (sizeType === 1) {
-      let sizes = ['Twin', 'Single', 'Queen', 'King']
+      let sizes = ['Twin', 'Single', 'Queen', 'King'];
       let title = random(0, 4);
-      document.title = `${sizes[title]}`;;
+      document.title = `${sizes[title]}`;
     } else {
       document.title = '';
     }
