@@ -3,6 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
 const db = require('./database/database.js');
+const seed = require('./database/seed.js');
 const path = require('path');
 const bodyParser = require('body-parser').json();
 
