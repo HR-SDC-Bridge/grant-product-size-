@@ -23,10 +23,10 @@ class ProductSize extends React.Component {
         this.setState({data: res.data});
       });
 
-    axios.get(`http://localhost:3004//images/sizeService/${this.state.id}`)
-      .then((res) => {
-        this.setState({image: res.data});
-      });
+    // axios.get(`http://localhost:3004//images/sizeService/${this.state.id}`)
+    //   .then((res) => {
+    //     this.setState({image: res.data});
+    //   });
   }
 
   toggleOverlay(e) {

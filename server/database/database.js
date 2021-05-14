@@ -7,6 +7,8 @@ const host = process.env.DB_HOST_ENV === 'docker' ? 'mongo:27017' : 'localhost';
 const productSizes = models.productSizes;
 const singleSize = models.singleSize;
 
+//Mongoose Connection--Comment out before running seeding script
+
 // console.log(`Connecting to DB mongodb://${host}/${dbname}`)
 // mongoose.connect(`mongodb://${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 

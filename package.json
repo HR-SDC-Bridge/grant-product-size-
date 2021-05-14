@@ -44,7 +44,8 @@
     "test": "jest --no-cache -u --collect-coverage",
     "start": "nodemon ./server/server.js",
     "build": "webpack --watch",
-    "start-docker": "node ./server/server.js"
+    "start-docker": "node ./server/server.js",
+    "postgres": "nodemon ./server/database/postgres/postgres.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -75,6 +76,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.19",
+    "pg": "^8.6.0",
+    "pg-cursor": "^2.6.0",
+    "postgres": "^1.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
