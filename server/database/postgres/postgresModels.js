@@ -13,19 +13,17 @@ client.connect();
 
 const query = `
 CREATE TABLE productSizes (
-    id SERIAL,
-  title VARCHAR,
-    PRIMARY KEY (id)
+  id INT NOT NULL PRIMARY KEY,
+  title VARCHAR
 );
 
 DROP TABLE IF EXISTS singleSizeSchema;
 CREATE TABLE singleSizeSchema (
-  id serial,
+  id INT NOT NULL PRIMARY KEY,
   productSizes_id int NOT NULL,
   name VARCHAR,
   size VARCHAR,
   unit VARCHAR,
-  PRIMARY KEY (id),
   FOREIGN KEY (productSizes_id) REFERENCES productSizes(id) ON DELETE CASCADE
 )
 `;

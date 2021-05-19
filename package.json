@@ -45,7 +45,8 @@
     "start": "nodemon ./server/server.js",
     "build": "webpack --watch",
     "start-docker": "node ./server/server.js",
-    "postgres": "nodemon ./server/database/postgres/postgres.js"
+    "postgres-tables": "nodemon ./server/database/postgres/postgresModels.js",
+    "write-csv": "node ./server/database/writeCSV.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -73,6 +74,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "csv-write-stream": "^2.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.19",
