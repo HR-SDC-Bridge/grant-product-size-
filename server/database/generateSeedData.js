@@ -25,7 +25,7 @@ const generateSeedData = (id) => {
   const numSizes = sizeType < 0 ? 0 : sizingGroup.length;
   for (let j = 0; j < numSizes; j++) {
     let temp = {
-      productSizesId: id,
+      // productSizesId: id,
       name: sizingGroup[j][0],
       unit: sizingGroup[j][1],
       size: random(5, 150)
@@ -40,7 +40,7 @@ const generateSeedData = (id) => {
     const sizeType = random(0, 2);
     const sizingGroup = sizeSets[2][sizeType];
     let temp = {
-      productSizesId: id,
+      // productSizesId: id,
       name: sizingGroup[0],
       unit: sizingGroup[1],
       size: random(35, 250)

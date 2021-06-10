@@ -1,4 +1,5 @@
 require('dotenv').config();
+const newrelic = require('newrelic');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const models = require('./databaseModels');
@@ -9,8 +10,8 @@ const singleSize = models.singleSize;
 
 //Mongoose Connection--Comment out before running seeding script
 
-// console.log(`Connecting to DB mongodb://${host}/${dbname}`)
-// mongoose.connect(`mongodb://${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+console.log(`Connecting to DB mongodb://${host}/${dbname}`)
+mongoose.connect(`mongodb://${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 mongoose.connection.on('error', console.error.bind(console, 'connection error: '));
 mongoose.connection.once('open', () => console.log('Connection successful!'));
@@ -62,7 +63,7 @@ const db = {
     productSizes.findOne({id: id}, (err, docs) => {
       if (err || docs === null) { return callback(err); }
       return callback(null, docs);
-    });
+    })
   },
 
   //DELETE

@@ -78,6 +78,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.19",
+    "newrelic": "^7.5.0",
     "pg": "^8.6.0",
     "pg-cursor": "^2.6.0",
     "postgres": "^1.0.2",
