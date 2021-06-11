@@ -10,8 +10,8 @@ const dbname = process.env.NODE_ENV === 'test' ? 'ikea-test' : 'ikea';
 const host = process.env.DB_HOST_ENV === 'docker' ? 'mongo:27017' : 'localhost';
 
 const fs = require('fs');
-var csvWriter = require('csv-write-stream');
-var writer = csvWriter({ headers: ["title", "id"] });
+// var csvWriter = require('csv-write-stream');
+// var writer = csvWriter({ headers: ["title", "id"] });
 const writePath = 'server/database/__data__/product-size.json';
 // const productsWritePath = 'server/database/__data__/products.csv';
 // const sizesWritePath = 'server/database/__data__/sizes.csv';
