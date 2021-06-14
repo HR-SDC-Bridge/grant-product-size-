@@ -40,7 +40,7 @@
   },
   "scripts": {
     "generate-data": "node ./server/database/seed.js",
-    "seed-mongo": "mongoimport --db ikea --collection productsizes --type json --file ./server/database/__data__/product-size.json --jsonArray",
+    "seed-mongo": "mongoimport --username grant --password templars --db ikea --collection productsizes --type json --file ./server/database/__data__/product-size.json --jsonArray",
     "test": "jest --no-cache -u --collect-coverage",
     "start": "nodemon ./server/server.js",
     "build": "webpack --watch",
