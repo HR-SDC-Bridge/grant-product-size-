@@ -10,6 +10,10 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.use(express.static(path.resolve('public')));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 app.get('/:id', (req, res) => {
   res.sendFile(path.resolve('public/index.html'));
 });
