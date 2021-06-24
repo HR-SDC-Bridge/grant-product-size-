@@ -1,18 +1,24 @@
 require('dotenv').config();
-const newrelic = require('newrelic');
+//const newrelic = require('newrelic');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const models = require('./databaseModels');
-const dbname = process.env.NODE_ENV === 'test' ? 'ikea-test' : 'ikea';
-const host = process.env.DB_HOST_ENV === 'docker' ? 'mongo:27017' : 'localhost';
+//const dbname = process.env.NODE_ENV === 'test' ? 'ikea-test' : 'ikea';
+//const host = process.env.DB_HOST_ENV === 'docker' ? 'mongo:27017' : 'localhost';
 const productSizes = models.productSizes;
 const singleSize = models.singleSize;
+const host = 'mongo:27017';
 
 //Mongoose Connection--Comment out before running seeding script
 
-console.log(`Connecting to DB mongodb://${host}/${dbname}`)
-mongoose.connect(`mongodb://${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+//var mongooseConnectionString = 'mongodb://grant:templars@13.52.125.255:27017/ikea';
+var mongooseConnectionString = 'mongodb://grant:templars@localhost:27017/ikea';
 
+console.log('Connecting to DB');
+//console.log(`Connecting to DB mongodb://${host}/${dbname}`)
+//mongoose.connect(`mongodb://${username}:${password}@${host}/${dbname}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(mongooseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+  .catch(error => console.log(error.reason));
 mongoose.connection.on('error', console.error.bind(console, 'connection error: '));
 mongoose.connection.once('open', () => console.log('Connection successful!'));
 
