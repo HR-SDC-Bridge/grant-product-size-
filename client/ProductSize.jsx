@@ -18,10 +18,12 @@ class ProductSize extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://13.52.125.255/api/sizes/${this.state.id}`)
+    axios.get(`/api/sizes/${this.state.id}`)
       .then((res) => {
+	      console.log(res.data);
         this.setState({data: res.data});
-      });
+      })
+	.catch(err => console.log(err));
 
     // axios.get(`http://localhost:3004//images/sizeService/${this.state.id}`)
     //   .then((res) => {

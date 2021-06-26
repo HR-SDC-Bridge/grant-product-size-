@@ -11,8 +11,8 @@ const host = 'mongo:27017';
 
 //Mongoose Connection--Comment out before running seeding script
 
-//var mongooseConnectionString = 'mongodb://grant:templars@13.52.125.255:27017/ikea';
-var mongooseConnectionString = 'mongodb://grant:templars@localhost:27017/ikea';
+var mongooseConnectionString = 'mongodb://grant:templars@13.52.125.255:27017/ikea';
+//var mongooseConnectionString = 'mongodb://grant:templars@localhost:27017/ikea';
 
 console.log('Connecting to DB');
 //console.log(`Connecting to DB mongodb://${host}/${dbname}`)
